@@ -11,7 +11,7 @@ This project aims to predict the net profit of café franchises based on various
 4. [Results](#results)
 5. [How to Use](#how-to-use)
 6. [Dependencies](#dependencies)
-7. [Author Contact] (#author-contact)
+7. [Author Contact](#author-contact)
 
 ---
 
@@ -65,11 +65,15 @@ The code performs the following steps:
    ```bash
    git clone https://github.com/FelipeLeiteDS/Cafe-Profit-Forecast.git
 
+---
+
 ## **Dependencies**
 - Python 3.12.7
 - Libraries:
-* `pandas`
-* `scikit-learn`
+  - `pandas`
+  - `scikit-learn`
+
+---
 
 ## **Author Contact**
 For questions or collaboration opportunities, feel free to reach out:  
