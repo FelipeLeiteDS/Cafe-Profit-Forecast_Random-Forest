@@ -6,7 +6,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import mean_absolute_percentage_error
 
 #importing and turning categorical variables into dummy
-df = pd.read_excel("C:/Users/Felipe Leite/OneDrive/Área de Trabalho/github_profile/Cafe-Profit-Forecast/Cafe-Profit-Forecast/Dataset/Franchises_Dataset_felipe_v.1.xlsx")
+df = pd.read_excel("C:/Users/Felipe Leite/OneDrive/Área de Trabalho/github_profile/Cafe-Profit-Forecast/Dataset/Franchises_Dataset_felipe_v.1.xlsx")
 df = pd.get_dummies(df, columns=["Location","Business Type"])
 
 #setting variables
