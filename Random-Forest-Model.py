@@ -1,12 +1,13 @@
-#Created on Fri May 12 18:36:12 2023
+#@uthor: Felipe Leite
 
-#@author: Felipe Leite
+import pandas as pd
+import numpy as np
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.metrics import mean_absolute_percentage_error
 
-
-import pandas
 #importing and turning categorical variables into dummy
-df=pandas.read_excel("C:/Users/Felipe Leite/OneDrive/Área de Trabalho/Master UCW/Fourth Term/BUSI 652 - Predictive Analysis/Group assingment/Franchises Dataset.xlsx")
-df=pandas.get_dummies(df, columns=["Location","Business Type"])
+df = pd.read_excel("C:/Users/Felipe Leite/OneDrive/Área de Trabalho/github_profile/Cafe-Profit-Forecast/Cafe-Profit-Forecast/Dataset/Franchises_Dataset_felipe_v.1.xlsx")
+df = pd.get_dummies(df, columns=["Location","Business Type"])
 
 #setting variables
 y = df['Net Profit']
@@ -18,16 +19,14 @@ x_train = x[0:81]
 y_test=y[81:]
 x_test=x[81:]
 
-#Random Florest settings
-from sklearn.tree import DecisionTreeRegressor
+#Random Forest settings
 dtmodel=DecisionTreeRegressor()
 dtmodel.fit(x_train,y_train)
 
-#For error mesurament
-y_pred=dtmodel.predict(x_test)
-ape=abs(y_pred-y_test)/y_test*100
-mape=ape.mean()
-mape
+#For error measurement
+y_pred = dtmodel.predict(x_test)
+mape = mean_absolute_percentage_error(y_test, y_pred) * 100
+print(f"MAPE: {mape}%")
 
 #means
 df["Counter Sales"].mean()
